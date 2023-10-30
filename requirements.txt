@@ -1,0 +1,5 @@
+sphinx
+sphinx-design
+sphinxext-altair
+altair
+insipid-sphinx-theme
