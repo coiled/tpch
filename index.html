@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;no title&gt; &#8212; TPC-H Results</title>
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=649a27d8" />
+    <link rel="stylesheet" type="text/css" href="_static/insipid.css?v=b2d00be7" />
+    <link rel="stylesheet" type="text/css" href="_static/altair-plot.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=092373c1" />
+
+    <script src="_static/documentation_options.js?v=8a448e45"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.15.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script defer src="_static/insipid.js"></script>
+    <script defer src="_static/insipid-sidebar.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+  </head><body>
+    <script type="text/javascript">
+        document.body.classList.add('js');
+    </script>
+    <input type="checkbox" id="sidebar-checkbox" style="display: none;">
+    <label id="overlay" for="sidebar-checkbox"></label>
+    <div class="sidebar-resize-handle"></div>
+    <script type="text/javascript">
+        try {
+            let sidebar = localStorage.getItem('sphinx-sidebar');
+            const sidebar_width = localStorage.getItem('sphinx-sidebar-width');
+            if (sidebar_width) {
+                document.documentElement.style.setProperty('--sidebar-width', sidebar_width);
+            }
+            // show sidebar on wide screen
+            if (!sidebar && window.matchMedia('(min-width: 100rem)').matches) {
+                sidebar = 'visible';
+                // NB: We don't store the value in localStorage!
+            }
+            if (sidebar === 'visible') {
+                document.getElementById('sidebar-checkbox').checked = true;
+            }
+        } catch(e) {
+            console.info(e);
+        }
+    </script>
+    <header id="topbar-placeholder">
+      <div id="topbar">
+        <div id="titlebar">
+          <div class="buttons">
+            <label for="sidebar-checkbox" id="sidebar-button" role="button" tabindex="0" aria-controls="sphinxsidebar" accesskey="M">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg>
+            </label>
+            <button id="search-button" type="button" title="Search" aria-label="Search" aria-expanded="false" aria-controls="search-form" accesskey="S">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+            </button>
+          </div>
+          <div class="title">
+            <span class="parent">TPC-H Results</span>
+            <a class="top" href="#">&lt;no title&gt;</a>
+          </div>
+          <div class="buttons">
+            <button id="fullscreen-button" type="button" aria-hidden="true">
+              <span class="enable">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M212.686 315.314L120 408l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C10.697 480 0 469.255 0 456V344c0-21.382 25.803-32.09 40.922-16.971L72 360l92.686-92.686c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.249 6.248 6.249 16.378 0 22.627zm22.628-118.628L328 104l-32.922-31.029C279.958 57.851 290.666 32 312.048 32h112C437.303 32 448 42.745 448 56v112c0 21.382-25.803 32.09-40.922 16.971L376 152l-92.686 92.686c-6.248 6.248-16.379 6.248-22.627 0l-25.373-25.373c-6.249-6.248-6.249-16.378 0-22.627z"/></svg>
+              </span>
+              <span class="disable">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M4.686 427.314L104 328l-32.922-31.029C55.958 281.851 66.666 256 88.048 256h112C213.303 256 224 266.745 224 280v112c0 21.382-25.803 32.09-40.922 16.971L152 376l-99.314 99.314c-6.248 6.248-16.379 6.248-22.627 0L4.686 449.941c-6.248-6.248-6.248-16.379 0-22.627zM443.314 84.686L344 184l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C234.697 256 224 245.255 224 232V120c0-21.382 25.803-32.09 40.922-16.971L296 136l99.314-99.314c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.248 6.248 6.248 16.379 0 22.627z"/></svg>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div id="searchbox" role="search">
+          <form id="search-form" class="search" style="display: none" action="search.html" method="get">
+            <input type="search" name="q" placeholder="Search ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <button>Go</button>
+          </form>
+        </div>
+      </div>
+    </header>
+    <nav>
+    </nav>
+
+    <nav class="relbar">
+    </nav>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+<div class="sd-tab-set docutils">
+<input id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Local</label><div class="sd-tab-content docutils">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+10 GB</label><div class="sd-tab-content docutils">
+
+<div id="index-rst-altair-plot-0">
+<script>
+  // embed when document is loaded, to ensure vega library is available
+  // this works on all modern browsers, except IE8 and older
+  document.addEventListener("DOMContentLoaded", function(event) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 16}}, "data": {"name": "data-19d97343b4f7ea730cc4b71173b91cce"}, "mark": {"type": "bar"}, "datasets": {"data-19d97343b4f7ea730cc4b71173b91cce": [{"name": "monday", "duration": 9.060477256774902, "library": "dask", "query": 1, "scale": 10}, {"name": "monday", "duration": 1.765326976776123, "library": "dask", "query": 2, "scale": 10}, {"name": "monday", "duration": 3.6951920986175537, "library": "dask", "query": 3, "scale": 10}, {"name": "monday", "duration": 2.375140905380249, "library": "dask", "query": 4, "scale": 10}, {"name": "monday", "duration": 10.652365684509277, "library": "dask", "query": 5, "scale": 10}, {"name": "monday", "duration": 0.5893287658691406, "library": "dask", "query": 6, "scale": 10}, {"name": "monday", "duration": 3.9972763061523438, "library": "dask", "query": 7, "scale": 10}, {"name": "monday", "duration": 0.9711151123046875, "library": "duckdb", "query": 1, "scale": 10}, {"name": "monday", "duration": 0.19390583038330078, "library": "duckdb", "query": 2, "scale": 10}, {"name": "monday", "duration": 0.5868828296661377, "library": "duckdb", "query": 3, "scale": 10}, {"name": "monday", "duration": 0.70131516456604, "library": "duckdb", "query": 4, "scale": 10}, {"name": "monday", "duration": 0.4990200996398926, "library": "duckdb", "query": 5, "scale": 10}, {"name": "monday", "duration": 0.6130170822143555, "library": "duckdb", "query": 6, "scale": 10}, {"name": "monday", "duration": 1.1507809162139893, "library": "duckdb", "query": 7, "scale": 10}, {"name": "monday", "duration": 2.123798131942749, "library": "polars", "query": 1, "scale": 10}, {"name": "monday", "duration": 0.08603692054748535, "library": "polars", "query": 2, "scale": 10}, {"name": "monday", "duration": 6.9354870319366455, "library": "polars", "query": 3, "scale": 10}, {"name": "monday", "duration": 1.1348259449005127, "library": "polars", "query": 4, "scale": 10}, {"name": "monday", "duration": 1.244992971420288, "library": "polars", "query": 5, "scale": 10}, {"name": "monday", "duration": 0.5499451160430908, "library": "polars", "query": 6, "scale": 10}, {"name": "monday", "duration": 11.457172870635986, "library": "polars", "query": 7, "scale": 10}, {"name": "monday", "duration": 3.2074081897735596, "library": "pyspark", "query": 1, "scale": 10}, {"name": "monday", "duration": 3.001209020614624, "library": "pyspark", "query": 2, "scale": 10}, {"name": "monday", "duration": 6.637006998062134, "library": "pyspark", "query": 3, "scale": 10}, {"name": "monday", "duration": 6.237554311752319, "library": "pyspark", "query": 4, "scale": 10}, {"name": "monday", "duration": 11.77228593826294, "library": "pyspark", "query": 5, "scale": 10}, {"name": "monday", "duration": 0.6573638916015625, "library": "pyspark", "query": 6, "scale": 10}, {"name": "monday", "duration": 9.410304069519043, "library": "pyspark", "query": 7, "scale": 10}]}, "encoding": {"color": {"field": "library", "scale": {"domain": ["dask", "duckdb", "polars", "pyspark"], "range": ["#5677a4ff", "#e68b39ff", "#d4605bff", "#82b5b2ff"]}, "type": "nominal"}, "tooltip": [{"field": "library", "type": "nominal"}, {"field": "duration", "type": "quantitative"}], "x": {"field": "query", "type": "nominal"}, "xOffset": {"field": "library", "type": "nominal"}, "y": {"field": "duration", "type": "quantitative"}}, "title": "TPC-H: local scale 10", "$schema": "https://vega.github.io/schema/vega-lite/v5.15.1.json"};
+      var opt = {
+        "mode": "vega-lite",
+        "renderer": "canvas",
+        "actions": {"editor": true, "source": true, "export": true}
+      };
+      vegaEmbed('#index-rst-altair-plot-0', spec, opt).catch(console.err);
+  });
+</script>
+</div></div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+100 GB</label><div class="sd-tab-content docutils">
+
+<div id="index-rst-altair-plot-1">
+<script>
+  // embed when document is loaded, to ensure vega library is available
+  // this works on all modern browsers, except IE8 and older
+  document.addEventListener("DOMContentLoaded", function(event) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 16}}, "data": {"name": "data-02073ebff80558e8c666d98d70455d8a"}, "mark": {"type": "bar"}, "datasets": {"data-02073ebff80558e8c666d98d70455d8a": [{"name": "monday", "duration": 36.86590600013733, "library": "dask", "query": 1, "scale": 100}, {"name": "monday", "duration": 28.686583042144775, "library": "dask", "query": 2, "scale": 100}, {"name": "monday", "duration": 82.95673108100891, "library": "dask", "query": 3, "scale": 100}, {"name": "monday", "duration": 41.355605125427246, "library": "dask", "query": 4, "scale": 100}, {"name": "monday", "duration": 90.8548936843872, "library": "dask", "query": 5, "scale": 100}, {"name": "monday", "duration": 4.84294581413269, "library": "dask", "query": 6, "scale": 100}, {"name": "monday", "duration": 148.48136401176453, "library": "dask", "query": 7, "scale": 100}, {"name": "monday", "duration": 10.08123779296875, "library": "duckdb", "query": 1, "scale": 100}, {"name": "monday", "duration": 1.7044849395751953, "library": "duckdb", "query": 2, "scale": 100}, {"name": "monday", "duration": 6.779109716415405, "library": "duckdb", "query": 3, "scale": 100}, {"name": "monday", "duration": 18.724390029907227, "library": "duckdb", "query": 4, "scale": 100}, {"name": "monday", "duration": 5.557571172714233, "library": "duckdb", "query": 5, "scale": 100}, {"name": "monday", "duration": 6.6448469161987305, "library": "duckdb", "query": 6, "scale": 100}, {"name": "monday", "duration": 85.88018822669983, "library": "duckdb", "query": 7, "scale": 100}, {"name": "monday", "duration": 28.122830152511597, "library": "polars", "query": 1, "scale": 100}, {"name": "monday", "duration": 1.9247398376464844, "library": "polars", "query": 2, "scale": 100}, {"name": "monday", "duration": 37.834815979003906, "library": "polars", "query": 3, "scale": 100}, {"name": "monday", "duration": 35.499149799346924, "library": "polars", "query": 4, "scale": 100}, {"name": "monday", "duration": 34.47191762924194, "library": "polars", "query": 5, "scale": 100}, {"name": "monday", "duration": 16.811951160430908, "library": "polars", "query": 6, "scale": 100}, {"name": "monday", "duration": 70.68971109390259, "library": "polars", "query": 7, "scale": 100}, {"name": "monday", "duration": 20.614519834518433, "library": "pyspark", "query": 1, "scale": 100}, {"name": "monday", "duration": 25.396076917648315, "library": "pyspark", "query": 2, "scale": 100}, {"name": "monday", "duration": 52.599098920822144, "library": "pyspark", "query": 3, "scale": 100}, {"name": "monday", "duration": 37.92567491531372, "library": "pyspark", "query": 4, "scale": 100}, {"name": "monday", "duration": 62.9075140953064, "library": "pyspark", "query": 5, "scale": 100}, {"name": "monday", "duration": 6.936012029647827, "library": "pyspark", "query": 6, "scale": 100}, {"name": "monday", "duration": 40.37201809883118, "library": "pyspark", "query": 7, "scale": 100}]}, "encoding": {"color": {"field": "library", "scale": {"domain": ["dask", "duckdb", "polars", "pyspark"], "range": ["#5677a4ff", "#e68b39ff", "#d4605bff", "#82b5b2ff"]}, "type": "nominal"}, "tooltip": [{"field": "library", "type": "nominal"}, {"field": "duration", "type": "quantitative"}], "x": {"field": "query", "type": "nominal"}, "xOffset": {"field": "library", "type": "nominal"}, "y": {"field": "duration", "type": "quantitative"}}, "title": "TPC-H: local scale 100", "$schema": "https://vega.github.io/schema/vega-lite/v5.15.1.json"};
+      var opt = {
+        "mode": "vega-lite",
+        "renderer": "canvas",
+        "actions": {"editor": true, "source": true, "export": true}
+      };
+      vegaEmbed('#index-rst-altair-plot-1', spec, opt).catch(console.err);
+  });
+</script>
+</div></div>
+</div>
+</div>
+<input checked="checked" id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Cloud</label><div class="sd-tab-content docutils">
+<blockquote>
+<div><div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+10 GB</label><div class="sd-tab-content docutils">
+
+<div id="index-rst-altair-plot-2">
+<script>
+  // embed when document is loaded, to ensure vega library is available
+  // this works on all modern browsers, except IE8 and older
+  document.addEventListener("DOMContentLoaded", function(event) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 16}}, "data": {"name": "data-54905b76b82b2b80473d13ff61567325"}, "mark": {"type": "bar"}, "datasets": {"data-54905b76b82b2b80473d13ff61567325": [{"name": "monday", "duration": 10.90343713760376, "library": "dask", "query": 1, "scale": 10}, {"name": "monday", "duration": 16.166181802749634, "library": "dask", "query": 2, "scale": 10}, {"name": "monday", "duration": 10.29440188407898, "library": "dask", "query": 3, "scale": 10}, {"name": "monday", "duration": 11.256632804870605, "library": "dask", "query": 4, "scale": 10}, {"name": "monday", "duration": 12.286056756973267, "library": "dask", "query": 5, "scale": 10}, {"name": "monday", "duration": 4.446949243545532, "library": "dask", "query": 6, "scale": 10}, {"name": "monday", "duration": 20.992727041244507, "library": "dask", "query": 7, "scale": 10}, {"name": "monday", "duration": 11.044553995132446, "library": "duckdb", "query": 1, "scale": 10}, {"name": "monday", "duration": 5.169151067733765, "library": "duckdb", "query": 2, "scale": 10}, {"name": "monday", "duration": 7.7413411140441895, "library": "duckdb", "query": 3, "scale": 10}, {"name": "monday", "duration": 5.670077800750732, "library": "duckdb", "query": 4, "scale": 10}, {"name": "monday", "duration": 4.541933059692383, "library": "duckdb", "query": 5, "scale": 10}, {"name": "monday", "duration": 3.351349115371704, "library": "duckdb", "query": 6, "scale": 10}, {"name": "monday", "duration": 5.891159772872925, "library": "duckdb", "query": 7, "scale": 10}, {"name": "monday", "duration": 16.330561876296997, "library": "polars", "query": 1, "scale": 10}, {"name": "monday", "duration": 1.7650318145751953, "library": "polars", "query": 2, "scale": 10}, {"name": "monday", "duration": 7.285298109054565, "library": "polars", "query": 3, "scale": 10}, {"name": "monday", "duration": 4.989911079406738, "library": "polars", "query": 4, "scale": 10}, {"name": "monday", "duration": 5.37268590927124, "library": "polars", "query": 5, "scale": 10}, {"name": "monday", "duration": 4.830255031585693, "library": "polars", "query": 6, "scale": 10}, {"name": "monday", "duration": 11.218437194824219, "library": "polars", "query": 7, "scale": 10}, {"name": "monday", "duration": 14.701817274093628, "library": "pyspark", "query": 1, "scale": 10}, {"name": "monday", "duration": 8.091166019439697, "library": "pyspark", "query": 2, "scale": 10}, {"name": "monday", "duration": 13.660501956939697, "library": "pyspark", "query": 3, "scale": 10}, {"name": "monday", "duration": 10.113178253173828, "library": "pyspark", "query": 4, "scale": 10}, {"name": "monday", "duration": 17.230294942855835, "library": "pyspark", "query": 5, "scale": 10}, {"name": "monday", "duration": 3.221795082092285, "library": "pyspark", "query": 6, "scale": 10}, {"name": "monday", "duration": 17.294842958450317, "library": "pyspark", "query": 7, "scale": 10}]}, "encoding": {"color": {"field": "library", "scale": {"domain": ["dask", "duckdb", "polars", "pyspark"], "range": ["#5677a4ff", "#e68b39ff", "#d4605bff", "#82b5b2ff"]}, "type": "nominal"}, "tooltip": [{"field": "library", "type": "nominal"}, {"field": "duration", "type": "quantitative"}], "x": {"field": "query", "type": "nominal"}, "xOffset": {"field": "library", "type": "nominal"}, "y": {"field": "duration", "type": "quantitative"}}, "title": "TPC-H: cloud scale 10", "$schema": "https://vega.github.io/schema/vega-lite/v5.15.1.json"};
+      var opt = {
+        "mode": "vega-lite",
+        "renderer": "canvas",
+        "actions": {"editor": true, "source": true, "export": true}
+      };
+      vegaEmbed('#index-rst-altair-plot-2', spec, opt).catch(console.err);
+  });
+</script>
+</div></div>
+<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
+100 GB</label><div class="sd-tab-content docutils">
+
+<div id="index-rst-altair-plot-3">
+<script>
+  // embed when document is loaded, to ensure vega library is available
+  // this works on all modern browsers, except IE8 and older
+  document.addEventListener("DOMContentLoaded", function(event) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 16}}, "data": {"name": "data-ad35121730c034305824dfaed0e10800"}, "mark": {"type": "bar"}, "datasets": {"data-ad35121730c034305824dfaed0e10800": [{"name": "monday", "duration": 30.587217092514038, "library": "dask", "query": 1, "scale": 100}, {"name": "monday", "duration": 26.059335947036743, "library": "dask", "query": 2, "scale": 100}, {"name": "monday", "duration": 33.653038024902344, "library": "dask", "query": 3, "scale": 100}, {"name": "monday", "duration": 22.253494024276733, "library": "dask", "query": 4, "scale": 100}, {"name": "monday", "duration": 38.64558815956116, "library": "dask", "query": 5, "scale": 100}, {"name": "monday", "duration": 8.782501935958862, "library": "dask", "query": 6, "scale": 100}, {"name": "monday", "duration": 51.42901587486267, "library": "dask", "query": 7, "scale": 100}, {"name": "monday", "duration": 74.002121925354, "library": "duckdb", "query": 1, "scale": 100}, {"name": "monday", "duration": 16.55844497680664, "library": "duckdb", "query": 2, "scale": 100}, {"name": "monday", "duration": 42.602356910705566, "library": "duckdb", "query": 3, "scale": 100}, {"name": "monday", "duration": 26.63283681869507, "library": "duckdb", "query": 4, "scale": 100}, {"name": "monday", "duration": 20.38564395904541, "library": "duckdb", "query": 5, "scale": 100}, {"name": "monday", "duration": 17.836101055145264, "library": "duckdb", "query": 6, "scale": 100}, {"name": "monday", "duration": 29.066822052001953, "library": "duckdb", "query": 7, "scale": 100}, {"name": "monday", "duration": 110.83045721054077, "library": "polars", "query": 1, "scale": 100}, {"name": "monday", "duration": 9.894960880279541, "library": "polars", "query": 2, "scale": 100}, {"name": "monday", "duration": 37.834815979003906, "library": "polars", "query": 3, "scale": 100}, {"name": "monday", "duration": 35.499149799346924, "library": "polars", "query": 4, "scale": 100}, {"name": "monday", "duration": 34.47191762924194, "library": "polars", "query": 5, "scale": 100}, {"name": "monday", "duration": 32.80384421348572, "library": "polars", "query": 6, "scale": 100}, {"name": "monday", "duration": 70.68971109390259, "library": "polars", "query": 7, "scale": 100}, {"name": "monday", "duration": 29.977081775665283, "library": "pyspark", "query": 1, "scale": 100}, {"name": "monday", "duration": 25.396076917648315, "library": "pyspark", "query": 2, "scale": 100}, {"name": "monday", "duration": 42.900230884552, "library": "pyspark", "query": 3, "scale": 100}, {"name": "monday", "duration": 37.92567491531372, "library": "pyspark", "query": 4, "scale": 100}, {"name": "monday", "duration": 62.9075140953064, "library": "pyspark", "query": 5, "scale": 100}, {"name": "monday", "duration": 12.788374185562134, "library": "pyspark", "query": 6, "scale": 100}, {"name": "monday", "duration": 40.37201809883118, "library": "pyspark", "query": 7, "scale": 100}]}, "encoding": {"color": {"field": "library", "scale": {"domain": ["dask", "duckdb", "polars", "pyspark"], "range": ["#5677a4ff", "#e68b39ff", "#d4605bff", "#82b5b2ff"]}, "type": "nominal"}, "tooltip": [{"field": "library", "type": "nominal"}, {"field": "duration", "type": "quantitative"}], "x": {"field": "query", "type": "nominal"}, "xOffset": {"field": "library", "type": "nominal"}, "y": {"field": "duration", "type": "quantitative"}}, "title": "TPC-H: cloud scale 100", "$schema": "https://vega.github.io/schema/vega-lite/v5.15.1.json"};
+      var opt = {
+        "mode": "vega-lite",
+        "renderer": "canvas",
+        "actions": {"editor": true, "source": true, "export": true}
+      };
+      vegaEmbed('#index-rst-altair-plot-3', spec, opt).catch(console.err);
+  });
+</script>
+</div></div>
+<input id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-6">
+1000 GB</label><div class="sd-tab-content docutils">
+
+<div id="index-rst-altair-plot-4">
+<script>
+  // embed when document is loaded, to ensure vega library is available
+  // this works on all modern browsers, except IE8 and older
+  document.addEventListener("DOMContentLoaded", function(event) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 16}}, "data": {"name": "data-92b1be5052792c6b55b98a0cccca4390"}, "mark": {"type": "bar"}, "datasets": {"data-92b1be5052792c6b55b98a0cccca4390": [{"name": "monday", "duration": 73.87279987335205, "library": "dask", "query": 1, "scale": 1000}, {"name": "monday", "duration": 131.4449999332428, "library": "dask", "query": 2, "scale": 1000}, {"name": "monday", "duration": 94.55262017250061, "library": "dask", "query": 3, "scale": 1000}, {"name": "monday", "duration": 74.57152819633484, "library": "dask", "query": 4, "scale": 1000}, {"name": "monday", "duration": 122.39376306533813, "library": "dask", "query": 5, "scale": 1000}, {"name": "monday", "duration": 20.034558057785034, "library": "dask", "query": 6, "scale": 1000}, {"name": "monday", "duration": 126.95842909812927, "library": "dask", "query": 7, "scale": 1000}, {"name": "monday", "duration": 132.87694191932678, "library": "duckdb", "query": 1, "scale": 1000}, {"name": "monday", "duration": 27.508002042770386, "library": "duckdb", "query": 2, "scale": 1000}, {"name": "monday", "duration": 115.86025500297546, "library": "duckdb", "query": 3, "scale": 1000}, {"name": "monday", "duration": 138.8857970237732, "library": "duckdb", "query": 4, "scale": 1000}, {"name": "monday", "duration": 78.14370131492615, "library": "duckdb", "query": 5, "scale": 1000}, {"name": "monday", "duration": 49.28833079338074, "library": "duckdb", "query": 6, "scale": 1000}, {"name": "monday", "duration": 203.42174196243286, "library": "duckdb", "query": 7, "scale": 1000}, {"name": "monday", "duration": 88.98200798034668, "library": "pyspark", "query": 1, "scale": 1000}, {"name": "monday", "duration": 69.679842710495, "library": "pyspark", "query": 2, "scale": 1000}, {"name": "monday", "duration": 177.3045461177826, "library": "pyspark", "query": 3, "scale": 1000}, {"name": "monday", "duration": 105.70660471916199, "library": "pyspark", "query": 4, "scale": 1000}, {"name": "monday", "duration": 31.783008098602295, "library": "pyspark", "query": 6, "scale": 1000}, {"name": "monday", "duration": 120.186851978302, "library": "pyspark", "query": 7, "scale": 1000}]}, "encoding": {"color": {"field": "library", "scale": {"domain": ["dask", "duckdb", "polars", "pyspark"], "range": ["#5677a4ff", "#e68b39ff", "#d4605bff", "#82b5b2ff"]}, "type": "nominal"}, "tooltip": [{"field": "library", "type": "nominal"}, {"field": "duration", "type": "quantitative"}], "x": {"field": "query", "type": "nominal"}, "xOffset": {"field": "library", "type": "nominal"}, "y": {"field": "duration", "type": "quantitative"}}, "title": "TPC-H: cloud scale 1000", "$schema": "https://vega.github.io/schema/vega-lite/v5.15.1.json"};
+      var opt = {
+        "mode": "vega-lite",
+        "renderer": "canvas",
+        "actions": {"editor": true, "source": true, "export": true}
+      };
+      vegaEmbed('#index-rst-altair-plot-4', spec, opt).catch(console.err);
+  });
+</script>
+</div></div>
+<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-7">
+10 TB</label><div class="sd-tab-content docutils">
+
+<div id="index-rst-altair-plot-5">
+<script>
+  // embed when document is loaded, to ensure vega library is available
+  // this works on all modern browsers, except IE8 and older
+  document.addEventListener("DOMContentLoaded", function(event) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "title": {"fontSize": 16}}, "data": {"name": "data-5ed03bb63b3fc39a4c8bbc867a73f0cb"}, "mark": {"type": "bar"}, "datasets": {"data-5ed03bb63b3fc39a4c8bbc867a73f0cb": [{"name": "monday", "duration": 415.4429130554199, "library": "dask", "query": 1, "scale": 10000}, {"name": "monday", "duration": 1310.7455260753632, "library": "dask", "query": 2, "scale": 10000}, {"name": "monday", "duration": 1085.202829837799, "library": "dask", "query": 3, "scale": 10000}, {"name": "monday", "duration": 684.4337239265442, "library": "dask", "query": 4, "scale": 10000}, {"name": "monday", "duration": 1323.5905430316925, "library": "dask", "query": 5, "scale": 10000}, {"name": "monday", "duration": 387.0132598876953, "library": "dask", "query": 6, "scale": 10000}, {"name": "monday", "duration": 1270.0352959632874, "library": "dask", "query": 7, "scale": 10000}, {"name": "monday", "duration": 2388.768807888031, "library": "duckdb", "query": 1, "scale": 10000}, {"name": "monday", "duration": 580.9721229076385, "library": "duckdb", "query": 2, "scale": 10000}, {"name": "monday", "duration": 576.6269869804382, "library": "pyspark", "query": 1, "scale": 10000}]}, "encoding": {"color": {"field": "library", "scale": {"domain": ["dask", "duckdb", "polars", "pyspark"], "range": ["#5677a4ff", "#e68b39ff", "#d4605bff", "#82b5b2ff"]}, "type": "nominal"}, "tooltip": [{"field": "library", "type": "nominal"}, {"field": "duration", "type": "quantitative"}], "x": {"field": "query", "type": "nominal"}, "xOffset": {"field": "library", "type": "nominal"}, "y": {"field": "duration", "type": "quantitative"}}, "title": "TPC-H: cloud scale 10000", "$schema": "https://vega.github.io/schema/vega-lite/v5.15.1.json"};
+      var opt = {
+        "mode": "vega-lite",
+        "renderer": "canvas",
+        "actions": {"editor": true, "source": true, "export": true}
+      };
+      vegaEmbed('#index-rst-altair-plot-5', spec, opt).catch(console.err);
+  });
+</script>
+</div></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+
+          <div class="sidebar-resize-handle"></div>
+
+<h3><a href="#">Table of Contents</a></h3>
+
+<div><hr class="docutils"></div>
+<ul>
+  <li class="toctree-l1"><a class="reference internal" href="genindex.html" accesskey="I">General Index</a></li>
+</ul>
+<div id="ethical-ad-placement"></div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <nav class="relbar">
+    </nav>
+
+    <footer role="contentinfo">
+      &#169; Copyright 2023, Coiled.
+      Created using <a class="reference external" href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+      <a class="reference external" href="https://insipid-sphinx-theme.readthedocs.io/">Insipid Theme</a>.
+<a class="reference internal" href="_sources/index.rst.txt" rel="nofollow">Show Source</a>.
+    </footer>
+  </body>
+</html>
