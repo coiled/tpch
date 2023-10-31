@@ -47,6 +47,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_build/html
-          cname: blog.coiled.io/tpch
+          cname: tpch.coiled.io
           # don't force push main deployment
           force: false
