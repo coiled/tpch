@@ -1,0 +1,6 @@
+_build
+.vscode
+.idea
+__pycache__/
+_website/
+.doctrees/_
