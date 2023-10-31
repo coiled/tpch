@@ -48,6 +48,13 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # a list of builtin themes.
 #
 html_theme = 'insipid'
+nosidebar = True
+
+html_theme_options = {
+    'left_buttons': [
+        'home-button.html',
+    ],
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
