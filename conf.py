@@ -54,3 +54,4 @@ html_theme = 'insipid'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_css_files = ['custom.css']
 html_static_path = ['_static']
+html_favicon = "_static/logo.svg"
