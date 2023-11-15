@@ -1,5 +1,5 @@
-Benchmark Results
-=================
+Benchmark Results for Spark, Dask, DuckDB, and Polars
+=====================================================
 
 .. tab-set::
 
@@ -55,3 +55,5 @@ Benchmark Results
                :remove-code:
 
                alt.Chart.from_json(open("charts/cloud-10000.json").read())
+
+Source code for all queries is available in the `coiled/benchmarks repo <https://github.com/coiled/benchmarks/tree/main/tests/tpch>`_. Watch our `YouTube video <https://www.youtube.com/watch?v=wKH0-zs2g_U>`_ for more details on why TPC-H, how we attempt to address our Dask bias, where Dask can be more efficient, and how you can run these benchmarks yourself.
