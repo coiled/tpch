@@ -17,8 +17,8 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'TPC-H Results'
-html_title = 'TPC-H Results'
+project = 'TPC-H Benchmarks at Scale'
+html_title = 'TPC-H Benchmarks at Scale'
 copyright = '2023, Coiled'
 author = 'Coiled'
 
@@ -48,12 +48,16 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # a list of builtin themes.
 #
 html_theme = 'insipid'
-nosidebar = True
+html_show_sourcelink = False
+html_show_sphinx = False
 
 html_theme_options = {
-    'left_buttons': [
+    'nosidebar': True,
+    'right_buttons': [
         'home-button.html',
+        'github-badge.html',
     ],
+    'left_buttons': [],
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
