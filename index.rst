@@ -42,7 +42,8 @@ Benchmark Results for Spark, Dask, DuckDB, and Polars
 
                alt.Chart.from_json(open("charts/cloud-100.json").read())
 
-          .. tab-item:: 1000 GB
+          .. tab-item:: 1 TB
+            :selected:
 
             .. altair-plot::
                :remove-code:
