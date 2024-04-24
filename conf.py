@@ -19,7 +19,7 @@
 
 project = 'TPC-H Benchmarks at Scale'
 html_title = 'TPC-H Benchmarks at Scale'
-copyright = '2023, Coiled'
+copyright = '2024, Coiled'
 author = 'Coiled'
 
 
